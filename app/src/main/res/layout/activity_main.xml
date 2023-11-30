@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/secondary">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Code Wheels"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/primary" />
+    <ListView
+        android:layout_marginTop="60dp"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:id="@+id/lv_devices"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/rounded_border"/>
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/tv_center"
+        android:layout_marginStart="200dp"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:id="@+id/iv_up"
+        android:src="@drawable/adelante"
+        android:layout_above="@+id/tv_center"
+        android:layout_alignStart="@+id/tv_center"
+        android:visibility="invisible"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:id="@+id/iv_down"
+        android:src="@drawable/atras"
+        android:layout_below="@+id/tv_center"
+        android:layout_alignStart="@+id/tv_center"
+        android:visibility="invisible"/>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/iv_right"
+        android:src="@drawable/derecha"
+        android:layout_toEndOf="@+id/tv_center"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        />
+
+    <ImageView
+        android:id="@+id/iv_left"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="-151dp"
+        android:layout_toEndOf="@+id/tv_center"
+        android:src="@drawable/izquierda"
+        android:visibility="invisible"/>
+</RelativeLayout>
