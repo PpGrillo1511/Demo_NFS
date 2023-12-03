@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/secondary">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -13,6 +14,7 @@
         android:textSize="30dp"
         android:textAlignment="center"
         android:textColor="@color/primary" />
+
     <ListView
         android:layout_marginTop="60dp"
         android:layout_width="300dp"
@@ -20,45 +22,48 @@
         android:id="@+id/lv_devices"
         android:layout_alignParentEnd="true"
         android:background="@drawable/rounded_border"/>
-    <TextView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_centerVertical="true"
-        android:id="@+id/tv_center"
-        android:layout_marginStart="200dp"/>
+
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="100dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/iv_stop"
+        android:src="@drawable/stop"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="300dp"
         android:id="@+id/iv_up"
         android:src="@drawable/adelante"
-        android:layout_above="@+id/tv_center"
-        android:layout_alignStart="@+id/tv_center"
+        android:layout_above="@+id/iv_stop"
+        android:layout_centerHorizontal="true"
         android:visibility="invisible"/>
+
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="300dp"
         android:id="@+id/iv_down"
         android:src="@drawable/atras"
-        android:layout_below="@+id/tv_center"
-        android:layout_alignStart="@+id/tv_center"
+        android:layout_below="@+id/iv_stop"
+        android:layout_centerHorizontal="true"
         android:visibility="invisible"/>
+
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:id="@+id/iv_right"
         android:src="@drawable/derecha"
-        android:layout_toEndOf="@+id/tv_center"
+        android:layout_toEndOf="@+id/iv_stop"
         android:layout_centerVertical="true"
-        android:visibility="invisible"
-        />
+        android:visibility="invisible"/>
 
     <ImageView
         android:id="@+id/iv_left"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:layout_centerVertical="true"
-        android:layout_marginStart="-151dp"
-        android:layout_toEndOf="@+id/tv_center"
+        android:layout_toStartOf="@+id/iv_stop"
         android:src="@drawable/izquierda"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 </RelativeLayout>

@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView ivRight;
     private ImageView ivUp;
     private ImageView ivDown;
+    private ImageView ivStop;
     private BluetoothAdapter bluetoothAdapter;
     public static ListView lvDevices;
     private final int REQUEST_ENABLE_BT = 1;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         ivRight=findViewById(R.id.iv_right);
         ivUp=findViewById(R.id.iv_up);
         ivDown=findViewById(R.id.iv_down);
+        ivStop = findViewById(R.id.iv_stop);
         sensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
         gyroscopeSensor=sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         lvDevices.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -119,6 +121,11 @@ public class MainActivity extends AppCompatActivity {
                     communication.write(mensaje.getBytes());
                     mensaje="";
                     previousDirection=direction;
+                }
+                if (x < -200 || x > 240 || y > 220 || y < -220) {
+                    ivStop.setVisibility(ImageView.INVISIBLE); // Si se mueve, ocultar el punto de parada
+                } else {
+                    ivStop.setVisibility(ImageView.VISIBLE); // El dispositivo está quieto, mostrar el punto de parada
                 }
             }
             @Override
